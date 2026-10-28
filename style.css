@@ -155,7 +155,14 @@ h3 {
     font-size: 16px;
     border-radius: 20px;
   }
-
+  .buttonsong {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    margin: 0 auto;
+    height: 30px;
+  }
   .box {
     gap: 8px;
   }
