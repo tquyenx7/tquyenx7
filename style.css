@@ -114,7 +114,8 @@ h3 {
 .box a {
   text-shadow: 0 1px 0 currentColor;
   text-decoration: none;
-  color: white;
+  color: rgb(17, 16, 16);
+  text-shadow: 1px 0px 0px currentColor;
 }
 
 .box {
@@ -135,7 +136,7 @@ h3 {
   align-items: center;
   flex-wrap: nowrap;
   gap: 12px;
-  background-image: url("./img/_.jpg");
+  background-image: url("./img/spd.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 30px;
