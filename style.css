@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: url(./img/obitoooooo.jpg);
+  background-image: url(./img/Black\ Hole\ Space\ Wallpaper\ _\ Dark\ 4K\ Cosmic\ AMOLED\ Phone\ Background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,6 +13,11 @@ body {
   font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   text-align: center;
   overflow-wrap: break-word;
+  color: red;
+}
+hr {
+  width: 300px;
+  margin: 0 auto;
 }
 
 /* ===== CHỮ ===== */
@@ -101,7 +106,10 @@ h3 {
 
 /* ===== HEADER ===== */
 .box.logo {
-  border-radius: 2000px;
+  border-radius: 50%;
+  width: 100px;
+  max-width: 100%;
+  height: auto;
 }
 .box a {
   text-shadow: 0 1px 0 currentColor;
@@ -127,7 +135,7 @@ h3 {
   align-items: center;
   flex-wrap: nowrap;
   gap: 12px;
-  background-image: url("./img/bgr laptop.jpg");
+  background-image: url("./img/_.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 30px;
@@ -139,13 +147,6 @@ h3 {
   max-width: 1000px;
   min-width: 0;
 }
-
-.logo {
-  width: 100px;
-  max-width: 100%;
-  height: auto;
-}
-
 /* ===== ĐIỆN THOẠI ===== */
 @media (max-width: 767.98px) {
   .container {
