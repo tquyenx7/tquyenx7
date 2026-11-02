@@ -197,24 +197,48 @@ h3 {
   width: 30px;
   height: 30px;
 }
-.img-meme1 {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  left: 134px;
-  bottom: 92px;
+/* Hỗ trợ nhiều trình duyệt */
+.img-meme1,
+.img-meme2 {
+  -webkit-animation: memespin 0.4s alternate-reverse infinite;
+  -moz-animation: memespin 0.4s alternate-reverse infinite;
+  -o-animation: memespin 0.4s alternate-reverse infinite;
   animation: memespin 0.4s alternate-reverse infinite;
+  width: 15%;
+  position: absolute;
+}
+.img-meme1 {
+  right: 70vw;
+  bottom: 6vh;
 }
 .img-meme2 {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  right: 148px;
-  top: 57px;
-  animation: memespin 0.4s alternate-reverse infinite;
+  left: 70vw;
+  bottom: 6vh;
+}
+.dlg-anm {
+  -webkit-animation: dlgmove 1.5s alternate-reverse infinite;
+  -moz-animation: dlgmove 1.5s alternate-reverse infinite;
+  -o-animation: dlgmove 1.5s alternate-reverse infinite;
+  animation: dlgmove 1.5s alternate-reverse infinite;
+  color: pink;
+  text-shadow: 2px 2px 1px black;
+  font-size: 20px;
 }
 
-@keyframes memespin {
+/* Hỗ trợ animation trên trình duyệt cũ */
+@-webkit-keyframes memespin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) translateY(-10px);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes memespin {
   0% {
     transform: rotate(0deg);
   }
@@ -225,16 +249,8 @@ h3 {
     transform: rotate(360deg);
   }
 }
-.dlg-anm {
-  position: absolute;
-  color: pink;
-  text-shadow: 2px 2px 1px black;
-  font-size: 20px;
-  animation: dlgmove 1.5s alternate-reverse infinite;
-  right: 569px;
-  bottom: 6px;
-}
-@keyframes dlgmove {
+
+@-webkit-keyframes dlgmove {
   0% {
     opacity: 0;
   }
