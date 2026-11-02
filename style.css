@@ -318,8 +318,8 @@ h3 {
     text-shadow: 2px 2px 1px black;
     font-size: 20px;
     animation: dlgmove 1.5s alternate-reverse infinite;
-    right: 166px;
-    bottom: 7px;
+    right: 40%;
+    bottom: 10px;
   }
 
   @keyframes dlgmove {
