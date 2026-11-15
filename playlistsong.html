@@ -5,6 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>pLaylist songs</title>
+    <style>
+      body {
+        align-items: center;
+        min-height: 100vh;
+        margin: 0 auto;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* Khung chứa các nút bấm */
+      .playlist-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+      }
+
+      /* Thiết kế chung cho các nút nhạc */
+      .music-btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+        transition: all 0.3s ease;
+        text-align: left;
+      }
+
+      .music-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(118, 75, 162, 0.5);
+      }
+
+      .music-btn:active {
+        transform: scale(0.98);
+      }
+
+      /* Đổi màu nút đang phát nhạc */
+      .music-btn.playing {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5253 100%);
+        box-shadow: 0 4px 15px rgba(238, 82, 83, 0.4);
+      }
+
+      /* Cắt gọn tên bài hát nếu quá dài */
+      .btn-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    </style>
   </head>
   <body>
     <div class="button button3"><a href="./index2.html">HOME</a></div>
@@ -18,32 +77,158 @@
     >
       khi làm azota or quiz bạn có thể chill cùng list nhạc dưới này nhé
     </p>
-    <div class="button buttonsong">
-      <a href="./kebukeyi.html">可不可以 / Ke Bu Ke Yi</a>
+    <!-- Chỉ cần 1 thẻ audio duy nhất để phát cho tất cả các nút -->
+    <audio id="main-audio"></audio>
+
+    <div class="playlist-container">
+      <!-- Nút 1 -->
+      <button
+        class="music-btn"
+        data-src="./media/forya.mp4"
+        data-title="For Ya"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">for ya</span>
+      </button>
+
+      <!-- Nút 2 -->
+      <button
+        class="music-btn"
+        data-src="./media/tracmaker.mp4"
+        data-title="Trac Maker"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">Trac Maker</span>
+      </button>
+
+      <!-- Nút 3 -->
+      <button
+        class="music-btn"
+        data-src="./media/iphone kupi.mp4"
+        data-title="Iphone Kupi"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">Iphone Kupi</span>
+      </button>
+      <!-- Nút 4 -->
+      <button
+        class="music-btn"
+        data-src="./media/haiyuni.mp4"
+        data-title="Haiyuni"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">海峪你</span>
+      </button>
+      <!-- Nút 5 -->
+      <button
+        class="music-btn"
+        data-src="./media/kebukeyi.mp4"
+        data-title="Ke Bu Ke Yi"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">可不可以</span>
+      </button>
+      <!-- Nút 6 -->
+      <button
+        class="music-btn"
+        data-src="./media/hongsegaogenxie.mp4"
+        data-title="Hong se gao gen xie"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">红色高跟鞋</span>
+      </button>
+      <!-- Nút 7 -->
+      <button
+        class="music-btn"
+        data-src="./media/nalidoushini.mp4"
+        data-title="Na Li Dou Shi Ni"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">哪里都是你</span>
+      </button>
+      <!-- Nút 8 -->
+      <button class="music-btn" data-src="./media/luse.mp4" data-title="Lu Se">
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">綠色</span>
+      </button>
+      <!-- Nút 9 -->
+      <button
+        class="music-btn"
+        data-src="./media/wedonttalkanymore.mp4"
+        data-title="We don't talk anymore"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">We don't talk anymore</span>
+      </button>
+      <!-- Nút 10 -->
+      <button
+        class="music-btn"
+        data-src="./media/haiyuni.mp4"
+        data-title="Haiyuni"
+      >
+        <span class="btn-icon">▶</span>
+        <span class="btn-text">海峪你</span>
+      </button>
     </div>
-    <div class="button buttonsong">
-      <a href="./hongsegaogenxie.html">红色高跟鞋 / Hong se gao gen xie</a>
-    </div>
-    <div class="button buttonsong">
-      <a href="./haiyuni.html">海峪你 / Hai Yu Ni</a>
-    </div>
-    <div class="button buttonsong">
-      <a href="./wedonttalkanymore.html">We don't talk anymore</a>
-    </div>
-    <div class="button buttonsong"><a href="./luse.html">綠色 / Lu Se</a></div>
-    <div class="button buttonsong">
-      <a href="./nalidoushini.html">哪里都是你 / Na Li Dou Shi Ni</a>
-    </div>
-    <div class="button buttonsong"><a href="./forya.html">For Ya</a></div>
-    <div class="button buttonsong">
-      <div class="sound">
-        <audio
-          controls
-          src="./media/trackmaker lllusionndary daytime.mp4"
-        ></audio>
-        <audio controls src="./media/iphone kupi.mp4"></audio>
-      </div>
-    </div>
+
+    <script>
+      const audio = document.getElementById("main-audio");
+      const buttons = document.querySelectorAll(".music-btn");
+      let currentBtn = null; // Lưu nút đang phát hiện tại
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const songSrc = btn.getAttribute("data-src");
+          const songTitle = btn.getAttribute("data-title");
+          const icon = btn.querySelector(".btn-icon");
+          const text = btn.querySelector(".btn-text");
+
+          // Trường hợp 1: Nhấn vào chính nút đang phát/tạm dừng
+          if (currentBtn === btn) {
+            if (audio.paused) {
+              audio.play();
+              icon.textContent = "⏸";
+              text.textContent = "Đang phát: " + songTitle;
+              btn.classList.add("playing");
+            } else {
+              audio.pause();
+              icon.textContent = "▶";
+              text.textContent = songTitle;
+              btn.classList.remove("playing");
+            }
+            return;
+          }
+
+          // Trường hợp 2: Nhấn sang một bài hát khác
+          // Đặt lại trạng thái cho nút cũ (nếu có)
+          if (currentBtn) {
+            currentBtn.querySelector(".btn-icon").textContent = "▶";
+            currentBtn.querySelector(".btn-text").textContent =
+              currentBtn.getAttribute("data-title");
+            currentBtn.classList.remove("playing");
+          }
+
+          // Cập nhật và phát bài mới
+          currentBtn = btn;
+          audio.src = songSrc;
+          audio.play();
+          icon.textContent = "⏸";
+          text.textContent = "Đang phát: " + songTitle;
+          btn.classList.add("playing");
+        });
+      });
+
+      // Tự động đặt lại nút khi bài hát kết thúc
+      audio.addEventListener("ended", () => {
+        if (currentBtn) {
+          currentBtn.querySelector(".btn-icon").textContent = "▶";
+          currentBtn.querySelector(".btn-text").textContent =
+            currentBtn.getAttribute("data-title");
+          currentBtn.classList.remove("playing");
+          currentBtn = null;
+        }
+      });
+    </script>
     <br />
     <br />
     <form action="https://www.youtube.com/results">
